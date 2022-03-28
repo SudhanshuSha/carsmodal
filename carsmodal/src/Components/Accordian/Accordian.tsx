@@ -11,7 +11,7 @@ const Accordian = () => {
       <Row>
         <Col xs={6} className="border">
           <Row className="border-bottom mb-2">
-            <Col> 
+            <Col>
               <FontAwesomeIcon icon={faStar} className="checked" />
               <span className="heading">
                 <b>4.5</b>
@@ -25,8 +25,8 @@ const Accordian = () => {
               <span className="text-fade ms-1 me-1">939 Reviews</span>
             </Col>
           </Row>
-        <Ratingscircle></Ratingscircle>
-          <Comments/>
+          <Ratingscircle></Ratingscircle>
+          <Comments />
         </Col>
       </Row>
     </Container>

@@ -1,0 +1,15 @@
+.text-rating {
+  font-weight: 700;
+}
+
+
+.text-a{
+    font-size: 12px;
+}
+
+.text-collapselink{
+    font-weight: 700px;
+    color: #0288d1;
+    text-decoration: none;
+    cursor: pointer;
+}
