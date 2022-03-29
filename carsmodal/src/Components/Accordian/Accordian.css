@@ -43,7 +43,7 @@
 
 .donut-label {
   text-align: center;
-  width: 111px;
+  /* width: 111px; */
   display: block;
   padding: 6px 0px;
   color: #6f6f6f;
