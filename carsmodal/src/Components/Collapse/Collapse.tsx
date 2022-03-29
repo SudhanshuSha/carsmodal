@@ -1,37 +1,12 @@
 import { Row, Col } from "react-bootstrap";
+import { CustomerRating } from "../../Interface/RatingAndComment";
 import Ratingscircle from "../Knobs/Ratingscircle";
-
 import "./Collapse.css";
 
-const CustomerRatings = [
-  {
-    Type: "Exterior",
-    Rating: 2,
-    color: "red",
-  },
-  {
-    Type: "Comfort",
-    Rating: 3,
-    color: "orange",
-  },
-  {
-    Type: "Performance",
-    Rating: 4,
-    color: "green",
-  },
-  {
-    Type: "Fuel Economy",
-    Rating: 5,
-    color: "green",
-  },
-  {
-    Type: "Value For Money",
-    Rating: 4,
-    color: "green",
-  },
-];
-
-const Collapse: React.FC<{ setCollapseInActive: () => void }> = (props) => {
+const Collapse: React.FC<{
+  setCollapseInActive: () => void;
+  customerRating: CustomerRating;
+}> = (props) => {
   const onClickHandler = () => {
     props.setCollapseInActive();
   };
@@ -43,7 +18,7 @@ const Collapse: React.FC<{ setCollapseInActive: () => void }> = (props) => {
             <span className="text-rating">Rating parameters</span>(out of 5)
           </p>
           <Row className="border-bottom mb-2">
-            {CustomerRatings.map((customerRating) => {
+            {props.customerRating.rating.map((customerRating) => {
               return (
                 <Ratingscircle
                   rating={customerRating.Rating}
@@ -59,13 +34,18 @@ const Collapse: React.FC<{ setCollapseInActive: () => void }> = (props) => {
           <Row>
             <Col>
               <p className="text-a">
-                Purchase <span className="text-rating">Used</span>
+                Purchase{" "}
+                <span className="text-rating">
+                  {props.customerRating.purchase}
+                </span>
               </p>
             </Col>
             <Col className="mb-3">
               <p className="text-a">
                 Driven for{" "}
-                <span className="text-rating">Did a short drive once</span>
+                <span className="text-rating">
+                  {props.customerRating.drivenFor}
+                </span>
               </p>
             </Col>
           </Row>
@@ -76,7 +56,7 @@ const Collapse: React.FC<{ setCollapseInActive: () => void }> = (props) => {
           </Row>
           <Row>
             <Col xs={10}></Col>
-            <Col>
+            <Col className="mb-3">
               <div className="text-collapselink" onClick={onClickHandler}>
                 Collapse
               </div>
